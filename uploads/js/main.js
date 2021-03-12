@@ -1,3 +1,3 @@
-$('nav ul li').click(function(){
+$('.sidebar ul li').click(function(){
     $(this).addClass("active").siblings().removeClass("active");
 })

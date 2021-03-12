@@ -1,7 +1,11 @@
+const models = require('../../models');
+
 exports.get_api = ( _ , res) => {
-    res.render( 'admin/api.html' , 
-        { message : "hello" } // message 란 변수를 템플릿으로 내보낸다.
-    );
+    models.api.findAll().then( result => {
+        res.render('admin/api.html', {
+          apis: result
+        });
+    });
 }
 
 exports.get_api_write = ( _ , res) => {
